@@ -1,4 +1,7 @@
 <?php
+
+ini_set('default_charset', 'ISO8859-1');
+
     if (version_compare(PHP_VERSION, '5.0.0', '<')){
         echo '<div style="margin:20px auto;width:100%;text-align:center;">
                     <p><b>Veuillez activer PHP5 sur votre hebergement!</b></p>
