@@ -10,7 +10,7 @@
 
 // Permet de s'assurer que tous les scripts passe bien par l'index du CMS
 define('INDEX_CHECK', 1);
-ini_set('default_charset', 'ISO8859-1');
+ini_set('default_charset', 'ISO-8859-1');
 
 require_once 'Includes/php51compatibility.php';
 require_once 'globals.php';

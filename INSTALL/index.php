@@ -1,6 +1,6 @@
 <?php
 
-ini_set('default_charset', 'ISO8859-1');
+ini_set('default_charset', 'ISO-8859-1');
 
     if (version_compare(PHP_VERSION, '5.0.0', '<')){
         echo '<div style="margin:20px auto;width:100%;text-align:center;">
