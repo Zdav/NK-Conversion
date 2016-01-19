@@ -7,7 +7,7 @@
  */
 defined('INDEX_CHECK') or die ('You can\'t run this file alone.');
 
-global $user, $nuked, $language, $cookie_forum;
+global $user, $nuked, $language, $cookie_forum, $theme;
 
 
 // On définit le niveau du visiteur
@@ -172,14 +172,14 @@ $your_last_visite = nkDate($user_last_visit);
                 $results = mysql_fetch_assoc($visits);
                 
                 if ($num_post > 0 && strrpos($results['forum_id'], ',' . $forum_id . ',') === false) {
-                    $img = 'modules/Forum/images/forum_new.png';
+                    $img = (is_file('themes/' . $theme . '/images/forum_new.png')) ? 'themes/' . $theme . '/images/forum_new.png' : 'modules/Forum/images/forum_new.png';
                 } 
                 else {
-                    $img = 'modules/Forum/images/forum.png';
+                    $img = (is_file('themes/' . $theme . '/images/forum.png')) ? 'themes/' . $theme . '/images/forum.png' : 'modules/Forum/images/forum.png';
                 } 
             } 
             else {
-                $img = 'modules/Forum/images/forum.png';
+                $img = (is_file('themes/' . $theme . '/images/forum.png')) ? 'themes/' . $theme . '/images/forum.png' : 'modules/Forum/images/forum.png';
             }
 
             //Detection image forum
@@ -490,15 +490,17 @@ $your_last_visite = nkDate($user_last_visit);
 <?php
                     }
                 }
+                $imgForumNew = (is_file('themes/' . $theme . '/images/forum_new.png')) ? '"themes/' . $theme . '/images/forum_new.png"' : '"modules/Forum/images/forum_new.png"';
+                $imgForum = (is_file('themes/' . $theme . '/images/forum.png')) ? '"themes/' . $theme . '/images/forum.png"' : '"modules/Forum/images/forum.png"';
 ?>
                 </div>
                 <div id="nkForumReadLegend">
                     <div>
-                        <img src="modules/Forum/images/forum_new.png" alt="NEW" />
+                        <img src=<?php echo $imgForumNew; ?> alt="NEW" />
                         <span><?php echo _NEWSPOSTLASTVISIT; ?></span>
                     </div>
                     <div>
-                        <img src="modules/Forum/images/forum.png" alt="" />
+                        <img src=<?php echo $imgForum; ?> alt="" />
                         <span><?php echo _NOPOSTLASTVISIT; ?></span>
                     </div>
                 </div>
