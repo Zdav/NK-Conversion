@@ -800,7 +800,7 @@
                         $req = mysql_query($sql) or die (mysql_error());
                         
                         $sql = "INSERT INTO `" . $db_prefix . "_news_cat` VALUES
-                            ('1', 'Counter Strike Source', '" . _BESTMOD . "', 'modules/News/images/cs.gif');";
+                            ('1', 'Counter Strike Source', '" . _BESTMOD . "', 'modules/News/images/csgo.png');";
                         $req = mysql_query($sql) or die (mysql_error());
                         echo 'OK';
         break;

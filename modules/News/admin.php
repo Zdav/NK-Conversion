@@ -360,7 +360,7 @@ if ($visiteur >= $level_admin && $level_admin > -1) {
 			. "<tr><td><b>" . _IMAGE . " :</b> <input type=\"text\" name=\"urlImage\" value=\"" . $coverage . "\" size=\"42\" />\n";
 
 			if ($coverage != ""){
-				echo "<img src=\"" . $coverage . "\" title=\"" . printSecuTags($titre) . "\" style=\"margin-left:20px; width:300px; height:auto; vertical-align:middle;\" />\n";
+				echo "<img src=\"" . $coverage . "\" title=\"" . printSecuTags($titre) . "\" style=\"margin-left:20px; max-width:300px; height:auto; vertical-align:middle;\" />\n";
 			}
 
 			echo "</td></tr>\n"
