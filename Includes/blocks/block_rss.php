@@ -203,11 +203,11 @@ function edit_block_rss($bid){
 						  </td>
 					  </tr>
                   </table>
-				  </form>
 				  <div style="text-align: center;"><br />
 				  	<input class="button" type="submit" name="send" value="' . _MODIFBLOCK . '" />
 				  	<a class="buttonLink" href="index.php?file=Admin&amp;page=block">' . _BACK . '</a>
 				  </div>
+				  </form>
 				  <br />
               </div>
           </div>';
