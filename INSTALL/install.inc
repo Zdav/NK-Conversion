@@ -160,7 +160,7 @@
                             ('footmessage', ''),
                             ('nk_status', 'open'),
                             ('index_site', 'News'),
-                            ('theme', 'Impact_Nk'),
+                            ('theme', 'Restless'),
                             ('keyword', ''),
                             ('description', ''),
                             ('inscription', 'on'),
