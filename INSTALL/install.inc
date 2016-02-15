@@ -201,6 +201,7 @@
                             ('max_archives', '30'),
                             ('max_members', '30'),
                             ('max_shout', '20'),
+                            ('max_sponsors', '10'),
                             ('mess_guest_page', '10'),
                             ('sond_delay', '24'),
                             ('level_analys', '-1'),
@@ -721,34 +722,36 @@
                           `nom` varchar(50) NOT NULL default '',
                           `niveau` int(1) NOT NULL default '0',
                           `admin` int(1) NOT NULL default '0',
+                          `type` int(1) NOT NULL default '0',
                           PRIMARY KEY  (`id`)
                         ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;";
                         $req = mysql_query($sql) or die (mysql_error());
                         
-                        $sql = "INSERT INTO `" . $db_prefix . "_modules` VALUES (1, 'News', 0, 2),
-                            (2, 'Forum', 0, 2),
-                            (3, 'Wars', 0, 2),
-                            (4, 'Irc', 0, 2),
-                            (5, 'Survey', 0, 3),
-                            (6, 'Links', 0, 3),
-                            (7, 'Sections', 0, 3),
-                            (8, 'Server', 0, 3),
-                            (9, 'Download', 0, 3),
-                            (10, 'Gallery', 0, 3),
-                            (11, 'Guestbook', 0, 3),
-                            (12, 'Suggest', 0, 3),
-                            (13, 'Textbox', 0, 9),
-                            (14, 'Calendar', 0, 2),
-                            (15, 'Members', 0, 9),
-                            (16, 'Team', 0, 9),
-                            (17, 'Defy', 0, 3),
-                            (18, 'Recruit', 0, 3),
-                            (19, 'Comment', 0, 9),
-                            (20, 'Vote', 0, 9),
-                            (21, 'Stats', 0, 2),
-                            (22, 'Contact', 0, 3),
-                            (23, 'Equipe', 0, 2),
-                            (24, 'Page', 0, 9);";
+                        $sql = "INSERT INTO `" . $db_prefix . "_modules` VALUES (1, 'News', 0, 2, 0),
+                            (2, 'Forum', 0, 2, 0),
+                            (3, 'Wars', 0, 2, 1),
+                            (4, 'Irc', 0, 2, 1),
+                            (5, 'Survey', 0, 3, 0),
+                            (6, 'Links', 0, 3, 0),
+                            (7, 'Sections', 0, 3, 0),
+                            (8, 'Server', 0, 3, 1),
+                            (9, 'Download', 0, 3, 0),
+                            (10, 'Gallery', 0, 3, 0),
+                            (11, 'Guestbook', 0, 3, 0),
+                            (12, 'Suggest', 0, 3, 0),
+                            (13, 'Textbox', 0, 9, 0),
+                            (14, 'Calendar', 0, 2, 0),
+                            (15, 'Members', 0, 9, 0),
+                            (16, 'Team', 0, 9, 1),
+                            (17, 'Defy', 0, 3, 1),
+                            (18, 'Recruit', 0, 3, 1),
+                            (19, 'Comment', 0, 9, 0),
+                            (20, 'Vote', 0, 9, 0),
+                            (21, 'Stats', 0, 2, 0),
+                            (22, 'Contact', 0, 3, 0),
+                            (23, 'Equipe', 0, 2, 1),
+                            (24, 'Page', 0, 9, 0),
+                            (25, 'Sponsors', 0, 9, 1);";
                         $req = mysql_query($sql) or die (mysql_error());
                         echo 'OK';
         break;
@@ -1022,6 +1025,28 @@
                             (1, '" . _WHATSNK . "', 0, 4);";
                         $req = mysql_query($sql) or die (mysql_error());
                         echo 'OK';
+        break;
+        case'sponsors':
+                        $sql = "DROP TABLE IF EXISTS `" . $db_prefix . "_sponsors`";
+                        $req = mysql_query($sql) or die (mysql_error());                        
+                        $sql = "CREATE TABLE `" . $db_prefix . "_sponsors` (
+                          `id` int(10) NOT NULL auto_increment,
+                          `date` varchar(12) NOT NULL default '',
+                          `name` varchar(255) NOT NULL default '',
+                          `logo` varchar(255) NOT NULL default '',                         
+                          `description` text NOT NULL,
+                          `url` text NOT NULL,
+                          `country` varchar(50) NOT NULL default '',
+                          `count` int(11) NOT NULL default '0',
+                          PRIMARY KEY  (`id`)
+                        ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;";
+                        $req = mysql_query($sql) or die (mysql_error());
+
+                        $sql = "INSERT INTO `" . $db_prefix . "_sponsors` VALUES
+                            (1, 991427400, 'Nuked Klan', 'images/logo_nk.png', '" . _NKSPONSORS . "', 'http://wwww.nuked-klan.org', 'france.gif', '')";
+                        $req = mysql_query($sql) or die (mysql_error());
+                        echo 'OK';
+
         break;
         case'staff':
                         $sql = "DROP TABLE IF EXISTS `" . $db_prefix . "_staff`";

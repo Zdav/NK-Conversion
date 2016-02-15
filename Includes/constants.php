@@ -70,4 +70,5 @@ define('WARS_TABLE', $nuked['prefix'] . '_match');
 define('WARS_FILES_TABLE', $nuked['prefix'] . '_match_files');
 define('CONTACT_TABLE', $nuked['prefix'] . '_contact');
 define('PAGE_TABLE', $nuked['prefix'] . '_page');
+define('SPONSORS_TABLE', $nuked['prefix'] . '_sponsors');
 ?>

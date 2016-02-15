@@ -275,4 +275,5 @@ define("_NOTBAD","Mouais, pas mal...");
 define("_SHIET","C\'est naze, arrêtez-vous !");
 define("_WHATSNK","C\'est quoi Nuked-Klan ?");
 define('_SUHOSIN', 'Attention la configuration PHP de suhosin.session.encrypt est sur "On". Veuillez vous référer à la documentation, en cas de problème.');
+define("_NKSPONSORS","Nuked-Klan, outil idéal pour crée votre site gamer clef en main, une référence depuis 2001 !");
 ?>
