@@ -28,7 +28,7 @@ while (list($thread_id, $titre, $last_post, $forum_id) = mysql_fetch_row($sql)) 
 
     $arrayTemp[$i]['lien'] = 'index.php?file=Forum&page=viewtopic&forum_id='.$forum_id.'&thread_id='.$thread_id.'#'.$mess_id;
     $arrayTemp[$i]['auteur'] = $auteur;
-    $arrayTemp[$i]['titre'] = substr($titre, 0, 65).'...';
+    $arrayTemp[$i]['titre'] = substr($titre, 0, 45).'...';
 
     $date = strftime('%d / %m / %Y', $last_post);
 

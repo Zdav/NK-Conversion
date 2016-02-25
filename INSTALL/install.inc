@@ -1043,7 +1043,7 @@
                         $req = mysql_query($sql) or die (mysql_error());
 
                         $sql = "INSERT INTO `" . $db_prefix . "_sponsors` VALUES
-                            (1, 991427400, 'Nuked Klan', 'images/logo_nk.png', '" . _NKSPONSORS . "', 'http://wwww.nuked-klan.org', 'france.gif', '')";
+                            (1, 991427400, 'Nuked Klan', 'images/logo_nk.png', '" . _NKSPONSORS . "', 'http://wwww.nuked-klan.org', 'France.gif', '')";
                         $req = mysql_query($sql) or die (mysql_error());
                         echo 'OK';
 
